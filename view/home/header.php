@@ -92,8 +92,11 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo ABS_PATH."#"?>" aria-expanded="false"><i class="fas fa-tasks"></i><span class="hide-menu">Evaluacion de Docentes</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-check-circle"></i><span class="hide-menu">Gestionar Usuarios </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."user/registrarnuevo"?>" class="sidebar-link"><i class="mdi mdi-checkbox-multiple-marked"></i><span class="hide-menu">Agregar</span></a></li>
-                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."user/editaruser"?>" class="sidebar-link"><i class="fas fa-users"></i><span class="hide-menu">Detalles</span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."user/registrarnuevo"?>" class="sidebar-link"><i class="mdi mdi-checkbox-multiple-marked"></i><span class="hide-menu">Agregar Usuario</span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."user/editaruser"?>" class="sidebar-link"><i class="fas fa-users"></i><span class="hide-menu">Detalles Usuario</span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."teacher/nuevo"?>" class="sidebar-link"><i class="mdi mdi-checkbox-multiple-marked"></i><span class="hide-menu">Agregar Profesor</span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."teacher/editarTeacher"?>" class="sidebar-link"><i class="fas fa-users"></i><span class="hide-menu">Detalles Profesor</span></a></li>
+
 
                             </ul>
                         </li>
@@ -103,10 +106,10 @@
                                 <li class="sidebar-item"><a href="<?php echo ABS_PATH."program/index"?>" class="sidebar-link"><i class="mdi mdi-book-plus"></i><span class="hide-menu"> Mostrar Programas </span></a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-barcode"></i><span class="hide-menu"> Gestion de Evaluacion </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-barcode"></i><span class="hide-menu"> Gestion Pregunta </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."evaluation/newEvaluation"?>" class="sidebar-link"><i class="mdi mdi-barcode-scan"></i><span class="hide-menu"> Agregar Evaluacion </span></a></li>
-                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."evaluation/index"?>" class="sidebar-link"><i class="mdi mdi-barcode-scan"></i><span class="hide-menu"> Mostrar Evaluacion </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."questions/newQuestion"?>" class="sidebar-link"><i class="mdi mdi-barcode-scan"></i><span class="hide-menu"> Agregar Pregunta </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo ABS_PATH."questions/index"?>" class="sidebar-link"><i class="mdi mdi-barcode-scan"></i><span class="hide-menu"> Mostrar Pregunta </span></a></li>
                             </ul>
                         </li>
                         

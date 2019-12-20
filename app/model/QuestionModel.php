@@ -6,30 +6,26 @@
         public function __construct(){
             $connection = new Conexion();
             $this->DataBase = $connection->get_conexion();
-            $query = $this->DataBase->prepare($sql);
+           
         }
 
-        public function setId_Question($id_question){
-            $this->id_question =$id_question;
-        }
 
-        public function setNameProgram($name_question){
+        public function setName_Question($name_question){
             $this->name_question = $name_question;
         }
 
-        public function getId_Program(){
-            return $this->id_question;
-        }
+    
 
-        public function getName_Program(){
+        public function getName_Question(){
             return  $this->name_question;
         }
 
         public function addQuestion()
         {
             try {
-                $sql = "INSERT INTO questions (id_question,name_question) VALUES (?,?)";
-                $data = [$this->getId_Question(),
+                $sql = "INSERT INTO questions (name_question) VALUES (?)";
+                $query = $this->DataBase->prepare($sql);
+                $data = [
                          $this->getName_Question(),
                         ];
                 $query->execute($data);
@@ -46,6 +42,7 @@
           
             try {
                 $sql = "SELECT * FROM questions";
+                $query = $this->DataBase->prepare($sql);
                 $query->execute();
                 $infprogram = $query->fetchAll();
                 $response = ['status' => 1, 'questions' => $infprogram];
@@ -60,6 +57,7 @@
 
             try {
                 $sql = "SELECT * FROM questions where id_question = ?";
+                $query = $this->DataBase->prepare($sql);
                 $data = [$id];
                 $query->execute($data);
                 $infoprogram = $query->fetch();
@@ -76,6 +74,7 @@
             try {
                 $sql = "DELETE  FROM questions WHERE id_question  = ? ";
                 $data = [$id];
+                $query = $this->DataBase->prepare($sql);
                 $query->execute($data);
                 $response = ['status' => 1, 'msg'=>" dato eliminado exitosamente"];
             } catch (Exception $e) {

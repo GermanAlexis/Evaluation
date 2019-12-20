@@ -10,8 +10,8 @@
             <div class="row">
                     <div class="card-body">
                    
-                     <form class="login100-form validate-form" action="<?php echo ABS_PATH."user/agregar"?>" method="POST">   
-					    <span class="login100-form-title p-b-59">Agregar Nuevo	</span>
+                     <form class="login100-form validate-form" action="<?php echo ABS_PATH."teacher/agregar"?>" method="POST">   
+					    <span class="login100-form-title p-b-59">Agregar Docente	</span>
 
                                 <div class="wrap-input100 validate-input" data-validate="Number is required">
                                     <span class="label-input100"><i class="fas fa-id-card"></i> Numero de Identificacion </span>
@@ -36,22 +36,11 @@
                                     <input class="input100" type="password" name="pass" placeholder="*************">
                                     <span class="focus-input100"></span>
                                 </div>
-
-                                <div class="wrap-input100 validate-input content-select select" data-validate = "Rol is required">
-                                 
-                                    <select  name="rol">
-                                        <option value="0">Administrador</option>
-                                        <option value="1">Docente</option>
-                                        <option value="2">Estudiante</option>
-                                    </select>
-                                    <span class="focus-input100"></span>
-                                </div>
-
                                 <div class="wrap-input100 validate-input  content-select select"  data-validate = "Program is required">
                                     <select name="program">
-                                    <?php 
-                                         foreach ($key['programs'] as $value) { ?>  
-                                         <option value="<?php $value['id_program'];?>"><?php echo $value['name_program'];} ?> </option> -->
+									 <?php foreach ($key['programs'] as $value) { ?>  
+                                         <option value="<?php echo $value['id_program'];?>"> <?php echo $value['name_program'];?> </option> 
+                                     <?php } ?>
                                     </select>
                                     <span class="focus-input100"></span>
                                 </div>
@@ -74,6 +63,7 @@
         </div>
     </div>
 </div>    
-                    
+            
+<?php require dirname(__FILE__).'/../home/footer.php'?>
+                
 
-  <?php require dirname(__FILE__).'/../home/footer.php'?>

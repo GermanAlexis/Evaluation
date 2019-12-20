@@ -1,7 +1,7 @@
 <?php
     use \vista\Vista;
 
-    class QuestionController {
+    class QuestionsController {
 
         
      
@@ -23,14 +23,16 @@
 
         public function addQ(){
             $Q = new QuestionModel();
-            $Q->setId_question($_POST['id_question']);
-            $data = $prog->addQuestion();
-            if ($data['status'] == 1) {
-                Redirecciona::LetsGoTo('question');
-                echo $data['msg']; 
-            } else {
-                echo $data['error'];
-            }
+            $sendpregunta = $_POST['sendpregunta'];
+            var_dump($sendpregunta);
+            // $data = $prog->addQuestion();
+            // if ($data['status'] == 1) {
+            //     Redirecciona::LetsGoTo('question');
+            //     echo $data['msg']; 
+            // } else {
+            //     echo $data['error'];
+            // }
+
         }
 
         public function updateQ($id_q) {

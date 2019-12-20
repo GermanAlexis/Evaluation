@@ -8,12 +8,16 @@
         }
 
         public function nuevo() {
-           
-            return Vista::crear("usuario.create");
+            $program = new ProgramModel();
+            $programmodel = $program->allProgram(); 
+            return Vista::crear("usuario.create",array('programs' => $programmodel['programs']));
         }
       
         public function registrarnuevo(){
-            return Vista::crear("usuario.register");
+            $program = new ProgramModel();
+            $programmodel = $program->allProgram(); 
+            return Vista::crear("usuario.register",array('programs' => $programmodel['programs']));
+           
         }
         
         public function editaruser(){
@@ -31,14 +35,15 @@
             $usuario->setRol($_POST['rol']);
             $usuario->setPrograma($_POST['program']);
             $data = $usuario->RegistroUser();
-            
-        // 
+               
             if ($data['status'] == 1) {
-                Redirecciona::LetsGoTo('home');
-                echo $data['msg']; 
-            } else {
-                echo $data['error'];
-            }
+                    Redirecciona::LetsGoTo('home');
+                    echo $data['msg']; 
+            }else{
+                        echo $data['error'];
+                   }
+            
+            
         }
 
         public function editar($id) {
@@ -64,19 +69,21 @@
             $data = $usuario->login();
             if ($data['id']['id_user'] == $usuario->getId_User()) {
                 if (password_verify($usuario->getPasswd(), $data['id']['pass'])) {                    
-                    @session_start();
-                    $session->CreateSession('user', $data['id']['names']);
-                    Redirecciona::LetsGoTo('home');
-                } else {
-                    $notification = 'toastr.error("Datos erroneos", "Contraseña incorrecta")';
-                    $session->CreateNotification($notification);
-                    Redirecciona::LetsGoTo('');
+                    var_dump($data['id']['id_user']);
                 }
-                } else {
-                    echo "Usuario incorrecto";
-                
-            }
-            
+                    // @session_start();
+                    // $session->CreateSession('user', $data['id']['names']);
+                    // Redirecciona::LetsGoTo('home');
+                // } else {
+                    // $notification = 'toastr.error("Datos erroneos", "Contraseña incorrecta")';
+                    // $session->CreateNotification($notification);
+                    // Redirecciona::LetsGoTo('');
+                // }
+                // } else {
+                    // echo "Usuario incorrecto";
+                // 
+            // }
+                }
         }
 
         public function logout() {

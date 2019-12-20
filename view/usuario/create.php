@@ -70,22 +70,14 @@
 						<span class="focus-input100"></span>
 					</div>
 
-          			<div class="wrap-input100 validate-input content-select select" data-validate = "Rol is required">
-						<span class="label-input100"><i class="ti-pencil"></i></span>
-						<select  name="rol">
-							<option value="0">Administrador</option>
-							<option value="1">Docente</option>
-							<option value="2">Estudiante</option>
-           				</select>
-					  <span class="focus-input100"></span>
-					</div>
+					<input name="rol" value="1"  type="hidden">
 
    			        <div class="wrap-input100 validate-input  content-select select"  data-validate = "Program is required">
             		<select  name="program">
-            		  <option value="0">Ingenierias</option>
-            		  <option value="1">Sociales</option>
-            		  <option value="2">Ingles</option>
-            		</select>
+					<?php 
+                       foreach ($key['programs'] as $value) { ?>  
+                       <option value="<?php echo $value['id_program'];?>"><?php echo $value['name_program'];} ?> </option> 
+                	</select>
 					<span class="focus-input100"></span>
 			</div>
       

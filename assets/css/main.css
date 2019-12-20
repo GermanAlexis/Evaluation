@@ -445,11 +445,11 @@ iframe {
   z-index: -1;
   width: 100%;
   height: 300%;
-  background: #e8519e;
-  background: -webkit-linear-gradient(top, #e8519e, #c77ff2, #e8519e, #c77ff2);
-  background: -o-linear-gradient(top, #e8519e, #c77ff2, #e8519e, #c77ff2);
-  background: -moz-linear-gradient(top, #e8519e, #c77ff2, #e8519e, #c77ff2);
-  background: linear-gradient(top, #e8519e, #c77ff2, #e8519e, #c77ff2);
+  background: #56e851;
+  background: -webkit-linear-gradient(top, #18b926, #7ff292, #e8519e, #c77ff2);
+  background: -o-linear-gradient(top, #18b926, #7ff292, #e8519e, #c77ff2);
+  background: -moz-linear-gradient(top, #18b926, #7ff292, #e8519e, #c77ff2);
+  background: linear-gradient(top, #18b926, #7ff292, #e8519e, #c77ff2);
   bottom: -100%;
   left: 0;
 
@@ -473,7 +473,7 @@ iframe {
 
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #fff;
+  color: rgb(3, 3, 3);
   line-height: 1.2;
 }
 

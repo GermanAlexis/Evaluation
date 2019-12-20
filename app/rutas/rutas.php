@@ -6,7 +6,8 @@ $ruta->controladores(array(
     "/user"  => "UserController",
     "/home"     => "HomeController",
     "/answers" => "AnswersController",
-    "/questions" => "QuestionController",
+    "/questions" => "QuestionsController",
     "/program" => "ProgramController",
-    "/evaluation" => "EvaluationController"
+    "/evaluation" => "EvaluationController",
+    "/teacher" => "TeacherController"
 ));

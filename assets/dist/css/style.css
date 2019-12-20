@@ -14703,7 +14703,7 @@ This is for the horizontal layout
     #main-wrapper[data-layout="horizontal"] .left-sidebar {
       width: 100%;
       height: auto;
-      position: relative;
+      position: fixed;
       padding-top: 0px;
       z-index: 45;
       -webkit-transition: 0s;

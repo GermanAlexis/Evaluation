@@ -4,26 +4,24 @@
 ?>
 <div class="page-wrapper">
     <div class="container-fluid">
-        <div class="row mt-2">
-           
-                <div class="col-md-6">
-                    <div class="row">
-                            <div class="card-body">
-                            <div class="col-sm-4 mt-2">
-                            <input id="pregunta" placeholder="holaaaaa" type="text">
-                            <button class="btn btn-circle" id="btnpregunta" >Pregunta</button>
-                            <form action="">
-                                <div id="vidpregunta"> </div>
-                                <div id="borrarpregunta"></div>
-                            
-                            </form>
-                                
-     
-                             </div>
-                    </div>
-                </div>
-        </div>
-    </div>
+            <div>
+                <input  id="pregunta" class="form-control mt-3" placeholder="holaaaaa" type="text"><br>
+            </div>
+            <div>
+                <button class="btn btn-dark btn-block" id="btnpregunta" > Agregar Pregunta</button>
+            </div>
+            <form id="example-form" action="<?php echo ABS_PATH."questions/addQ"?>">
+            <div class="row">
+                <div id="vidpregunta" class="form-group col-sm-8"></div>
+                <div id="borrarpregunta" class="form-group col-sm-2"></div>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-dark btn-block"  name="sendpregunta[]" >
+            </div>                
+            </form>
+            
+        
+
 </div> 
 <script>
     var contador=0;
