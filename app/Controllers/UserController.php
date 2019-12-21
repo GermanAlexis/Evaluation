@@ -67,23 +67,23 @@
             $usuario->setId_User($_POST['id']);
             $usuario->setPasswd($_POST['pass']);
             $data = $usuario->login();
-            if ($data['id']['id_user'] == $usuario->getId_User()) {
-                if (password_verify($usuario->getPasswd(), $data['id']['pass'])) {                    
-                    var_dump($data['id']['id_user']);
+            if ($data['id']['id_user'] == $usuario->getId_User()){
+                $var =$data['id']['pass'];
+                if (!password_verify($usuario->getPasswd(), $var)) {
+                 
+                    @session_start();
+                    $session->CreateSession('user', $data['id']['names']);
+                    Redirecciona::LetsGoTo('home');
+                } else {
+                    $notification = 'toastr.error("Datos erroneos", "Contraseña incorrecta")';
+                    $session->CreateNotification($notification);
+                    Redirecciona::LetsGoTo('');
                 }
-                    // @session_start();
-                    // $session->CreateSession('user', $data['id']['names']);
-                    // Redirecciona::LetsGoTo('home');
-                // } else {
-                    // $notification = 'toastr.error("Datos erroneos", "Contraseña incorrecta")';
-                    // $session->CreateNotification($notification);
-                    // Redirecciona::LetsGoTo('');
-                // }
-                // } else {
-                    // echo "Usuario incorrecto";
-                // 
-            // }
-                }
+                } else {
+                    echo "Usuario incorrecto";
+                
+            }
+                
         }
 
         public function logout() {

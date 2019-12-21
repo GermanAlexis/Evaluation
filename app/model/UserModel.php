@@ -3,7 +3,6 @@
         private $id_user;
         private $name;
         private $email;
-      
         private $passwd;
         private $rol;
         private $programa;
@@ -63,7 +62,7 @@
             return $this->programa;
         }
 
-        public function login()
+            public function login()
         {
           
             try {
@@ -84,7 +83,7 @@
             try {
                 $sql = "INSERT INTO user (id_user,names,rol,email,pass,id_programa) VALUES (?,?,?,?,?,?)";
                 $query = $this->DataBase->prepare($sql);
-                $data = [$this->getId_User(),
+                $data = [$this->getId_User(),   
                          $this->getNombres(),
                          $this->getRol(),
                          $this->getEmail(),
@@ -122,7 +121,7 @@
                 $query = $this->DataBase->prepare($sql);
                 $query->execute();
                 $infousuario = $query->fetchAll();
-                $response = ['status' => 1, 'users' => $infousuario];
+                $response = ['status' => 1, 'id' => $infousuario];
             } catch (Exception $e) {
                 $response = ['status' => 0, 'Error'=>$e];
             }
@@ -139,7 +138,7 @@
                 $data = [$id];
                 $query->execute($data);
                 $infousuario = $query->fetch();
-                $response = ['status' => 1, 'users' => $infousuario];
+                $response = ['status' => 1, 'id' => $infousuario];
             } catch (Exception $e) {
                 $response = ['status' => 0, 'Error'=>$e];
             }

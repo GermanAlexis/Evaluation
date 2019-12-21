@@ -107,7 +107,7 @@
 
         public function deleteTeacher($id)
         {
-          
+  
             try {
                 $sql = "DELETE  FROM teacher WHERE id_docente  = ? ";
                 $query = $this->DataBase->prepare($sql);
@@ -117,10 +117,9 @@
             } catch (Exception $e) {
                 $response = ['status' => 0, 'Error'=>$e];
             }
-
+ 
             return $response;
         }
-
-        
+ 
     }
 ?>
