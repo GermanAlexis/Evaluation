@@ -8,19 +8,17 @@
         }
 
         public function newEvaluation() {
-            return Vista::crear("evaluation.create");
+            $teacher = new TeacherModel();
+            $profesores = $teacher->allTeachers();
+            return Vista::crear("evaluation.create", array('teachers' => $profesores['teachers']));
         }
-      
-        public function deleteEvalaution(){
-            return Vista::crear("evaluation.index");
-        }
-        
-        public function updateEvaluation(){
-            return Vista::crear("evaluation.index");
-        }
-
+//   
         public function addE(){
+            $eval = new EvaluationModel();
+            $eval->setNumber($_POST["number"]);
+            $eval->setTeacher($_POST["teacher"]);
             $data = $eval->addEvaluation();
+
             if ($data['status'] == 1) {
                 Redirecciona::LetsGoTo('evaluation');
                 echo $data['msg']; 

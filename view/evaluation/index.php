@@ -14,7 +14,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Hacer evaluacion</h5>
                                     <p class="card-text">Aqui se realizara la encuentas que evaluara a los docentes</p>
-                                    <a href="evaluation/newEvaluation" class="btn btn-primary">Hacer</a>
+                                    <a href="<?php echo ABS_PATH."evaluation/newEvaluation"?>"  class="btn btn-primary">Hacer</a>
                                 </div>
                         </div>
                     </div>

@@ -8,13 +8,10 @@
             $this->DataBase = $connection->get_conexion();
            
         }
-
-
+       
         public function setName_Question($name_question){
             $this->name_question = $name_question;
         }
-
-    
 
         public function getName_Question(){
             return  $this->name_question;

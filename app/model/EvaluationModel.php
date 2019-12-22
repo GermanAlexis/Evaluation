@@ -1,18 +1,33 @@
 <?php 
     class EvaluationModel{
-     
+        
+        private $number;
+        private $teacher;
+
         public function __construct(){
             $connection = new Conexion();
             $this->DataBase = $connection->get_conexion();
-            
+        }
+        public function setNumber($number){
+            $this->number =  $number;
+        }
+        public function setTeacher($teacher){
+            $this->teacher =  $teacher;
+        }
+        public function getNumber(){
+            return  $this->number;
+        }
+        public function getTeacher(){
+            return  $this->teacher;
         }
 
         public function addEvaluation()
         {
             try {
-                $sql = "INSERT INTO evaluation";
+                $sql = "INSERT INTO evaluation (id_teacher,number_questions) VALUES (?,?)";
                 $query = $this->DataBase->prepare($sql);
-                $query->execute();
+                $data = [$this->getTeacher(), $this->getNumber()];
+                $query->execute($data);
                 $response = ['status' => 1, 'msg' => "evaluacion guardado exitosamente"];
             } catch (Exception $e) {
                 $response = ['status' => 0, 'error' => $e];

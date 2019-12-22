@@ -10,13 +10,13 @@
             <div>
                 <button class="btn btn-dark btn-block" id="btnpregunta" > Agregar Pregunta</button>
             </div>
-            <form id="example-form" action="<?php echo ABS_PATH."questions/addQ"?>">
+            <form id="example-form" action="<?php echo ABS_PATH."questions/addQ"?>" method="POST">
             <div class="row">
                 <div id="vidpregunta" class="form-group col-sm-8"></div>
                 <div id="borrarpregunta" class="form-group col-sm-2"></div>
             </div>
             <div>
-                <input type="submit" class="btn btn-dark btn-block"  name="sendpregunta[]" >
+                <input type="submit" class="btn btn-dark btn-block"  name="sendpreguntas" >
             </div>                
             </form>
             
@@ -34,6 +34,7 @@
              
              var x = document.createElement('input');
              x.setAttribute("class", "form-control mt-3");
+             x.setAttribute("name", "preguntas[]");
              x.setAttribute("id" , `pregunta-${contador}`);
              x.setAttribute("value", inputpregunta);
              vidpregunta.appendChild(x);
