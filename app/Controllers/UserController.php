@@ -17,7 +17,6 @@
             $program = new ProgramModel();
             $programmodel = $program->allProgram(); 
             return Vista::crear("usuario.register",array('programs' => $programmodel['programs']));
-           
         }
         
         public function editaruser(){
@@ -37,13 +36,11 @@
             $data = $usuario->RegistroUser();
                
             if ($data['status'] == 1) {
-                    Redirecciona::LetsGoTo('home');
-                    echo $data['msg']; 
+                Redirecciona::LetsGoTo('home');
+                echo $data['msg']; 
             }else{
-                        echo $data['error'];
-                   }
-            
-            
+                echo $data['error'];
+            }
         }
 
         public function editar($id) {
@@ -68,22 +65,21 @@
             $usuario->setPasswd($_POST['pass']);
             $data = $usuario->login();
             if ($data['id']['id_user'] == $usuario->getId_User()){
-                $var =$data['id']['pass'];
+                $var = $data['id']['pass'];
                 if (!password_verify($usuario->getPasswd(), $var)) {
                  
                     @session_start();
                     $session->CreateSession('user', $data['id']['names']);
+                    $session->CreateSession('user_id', $data['id']['id_user']);
                     Redirecciona::LetsGoTo('home');
                 } else {
                     $notification = 'toastr.error("Datos erroneos", "Contraseña incorrecta")';
                     $session->CreateNotification($notification);
                     Redirecciona::LetsGoTo('');
                 }
-                } else {
-                    echo "Usuario incorrecto";
-                
+            } else {
+                echo "Usuario incorrecto";
             }
-                
         }
 
         public function logout() {

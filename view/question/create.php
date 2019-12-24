@@ -5,7 +5,7 @@
 <div class="page-wrapper">
     <div class="container-fluid">
             <div>
-                <input  id="pregunta" class="form-control mt-3" placeholder="holaaaaa" type="text"><br>
+                <input  id="pregunta" class="form-control mt-3" placeholder="Digite Pregunta" type="text"><br>
             </div>
             <div>
                 <button class="btn btn-dark btn-block" id="btnpregunta" > Agregar Pregunta</button>
@@ -64,38 +64,7 @@
             eraseButton.remove();
             }
 
-            // var a = document.createElement('input');
-            // a.setAttribute("class", "form-control mt-3");
-            // a.setAttribute("id" , `eraseName-${contador}`);
-            // a.setAttribute("value", partes[1]);
-            // charizard.appendChild(a);
-// 
-            // var b = document.createElement('button');
-            // b.innerHTML = "<span style='font-size: 1em; color: Tomato;'><i class='fas fa-trash'></i></span>";
-            // b.setAttribute("class", "mt-4 ml-2 btn btn-link col-sm-12 ");
-            // b.setAttribute("id" , `${contador}`);
-            // b.setAttribute("onclick", "obtenerId(this)");
-            // b.setAttribute("type" , "button");
-            // b.setAttribute("value", "Borrar");
-            // erase.appendChild(b);
-            // 
-            // contador++;
-        // }
-// 
-        // function obtenerId(path) {
-            // var id = path.getAttribute("id")
-            // var eraseCode = document.getElementById(`eraseCode-${id}`);
-            // var eraseName = document.getElementById(`eraseName-${id}`);
-            // var eraseButton = document.getElementById(id);
-            // eraseCode.remove();
-            // eraseName.remove();
-            // eraseButton.remove();
-        // }
-// 
-        // var eraseTwo = document.getElementById('eraseTwo');
-        // var contadorObjeto = 0;
-
-
+ 
 </script>
     
   <?php require dirname(__FILE__).'/../home/footer.php'?>

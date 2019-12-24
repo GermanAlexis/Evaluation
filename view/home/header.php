@@ -70,7 +70,7 @@
                         <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                     </ul>
                     <ul class="navbar-nav float-right">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"><p><?php echo $_SESSION['user']. "-" .$_SESSION['user_id'] ;  ?></p>
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo ASSETS_URL."images/hombre.png"?>" alt="user" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <div class="dropdown-divider"></div>
@@ -96,8 +96,6 @@
                                 <li class="sidebar-item"><a href="<?php echo ABS_PATH."user/editaruser"?>" class="sidebar-link"><i class="fas fa-users"></i><span class="hide-menu">Detalles Usuario</span></a></li>
                                 <li class="sidebar-item"><a href="<?php echo ABS_PATH."teacher/nuevo"?>" class="sidebar-link"><i class="mdi mdi-checkbox-multiple-marked"></i><span class="hide-menu">Agregar Profesor</span></a></li>
                                 <li class="sidebar-item"><a href="<?php echo ABS_PATH."teacher/editarTeacher"?>" class="sidebar-link"><i class="fas fa-users"></i><span class="hide-menu">Detalles Profesor</span></a></li>
-
-
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-building"></i><span class="hide-menu"> Gestionar Programas </span></a>
@@ -112,7 +110,6 @@
                                 <li class="sidebar-item"><a href="<?php echo ABS_PATH."questions/index"?>" class="sidebar-link"><i class="mdi mdi-barcode-scan"></i><span class="hide-menu"> Mostrar Pregunta </span></a></li>
                             </ul>
                         </li>
-                        
                     </ul>
                 </nav>
             </div>

@@ -26,9 +26,18 @@
                                  <div class="card-body">
                                     <h5 class="card-title">informe Evaluacion</h5>
                                     <p class="card-text">Aqui se tendra el resultado de todas las evalauaciones de los docentes</p>
-                                    <a href="evaluacion/updateE" class="btn btn-primary">ir a informe</a>
+                                    <a href="evaluation/updateE" class="btn btn-primary">ir a informe</a>
                                  </div>
                         </div>
+
+                        <div class="card" style="width: 18rem;">
+           
+                                 <div class="card-body">
+                                    <h5 class="card-title">Evaluacion Docente Aqui!!</h5>
+                                    <a href="evaluation/evaluation" class="btn btn-primary">ir a Evaluacion</a>
+                                 </div>
+                        </div>
+
                 
             </div>
 

@@ -36,6 +36,34 @@
     $('#tablabacana').DataTable();
 </script>
 
+<script>
+            $(document).on('click', '.calificar', function (e) {
+                e.preventDefault();
+                var idCalificacion = $(this).attr('id');
+                var idTable = $(this).closest('tr').attr('id');
+                var idEvaluation = 2;
+
+                
+                datos = {
+                           "fk_evaluation": idEvaluation,
+                           "fk_question": idTable,
+                           "value_qualify": idCalificacion
+                        };
+                       $.ajax({
+                           url:"<?php echo ABS_PATH."califica/enviarCalificacion"?>",
+                           type: "POST",
+                           data: datos
+                       })
+                       .done(function (respuesta) {
+                           if(respuesta[status] == 1){
+                                $(this).closest('tr').remove();
+                           }else{
+                            printf("algo anda mal");
+                           }
+                       });
+            });
+        </script>
+
 </body>
 
 </html>

@@ -2,7 +2,8 @@
     class EvaluationModel{
         
         private $number;
-        private $teacher;
+        private $programa;
+        private $user;
 
         public function __construct(){
             $connection = new Conexion();
@@ -11,22 +12,29 @@
         public function setNumber($number){
             $this->number =  $number;
         }
-        public function setTeacher($teacher){
-            $this->teacher =  $teacher;
+        public function setPrograma($programa){
+            $this->programa =  $programa;
+        }
+        public function setUser($user){
+            $this->user = $user;
         }
         public function getNumber(){
             return  $this->number;
         }
-        public function getTeacher(){
-            return  $this->teacher;
+        public function getPrograma(){
+            return  $this->programa;
         }
+        public function getUser(){
+            return  $this->user;
+        }
+
 
         public function addEvaluation()
         {
             try {
-                $sql = "INSERT INTO evaluation (id_teacher,number_questions) VALUES (?,?)";
+                $sql = "INSERT INTO evaluation (fk_programa,number_questions, id_user) VALUES (?,?,?)";
                 $query = $this->DataBase->prepare($sql);
-                $data = [$this->getTeacher(), $this->getNumber()];
+                $data = [$this->getPrograma(), $this->getNumber(), $this->getUser()];
                 $query->execute($data);
                 $response = ['status' => 1, 'msg' => "evaluacion guardado exitosamente"];
             } catch (Exception $e) {

@@ -9,5 +9,6 @@ $ruta->controladores(array(
     "/questions" => "QuestionsController",
     "/program" => "ProgramController",
     "/evaluation" => "EvaluationController",
-    "/teacher" => "TeacherController"
+    "/teacher" => "TeacherController",
+    "/califica" => "QualifyEvaluationController"
 ));

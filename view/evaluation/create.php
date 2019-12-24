@@ -20,9 +20,9 @@
                                 </div>
 
                                 <div class="wrap-input100 validate-input  content-select select"  data-validate = "teacher is required">
-            		                <select  name="teacher">
-					                    <?php foreach ($key['teachers'] as $run) { ?>  
-                                            <option value="<?php echo $run['id_docente'];?>"><?php echo $run['names'];?> </option> 
+            		                <select  name="program">
+					                    <?php foreach ($key['programa'] as $run) { ?>  
+                                            <option value="<?php echo $run['id_program'];?>"><?php echo $run['name_program'];?> </option> 
                                         <?php }?>  
                 	                </select>
                                     <span class="focus-input100"></span>

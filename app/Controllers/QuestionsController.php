@@ -17,8 +17,7 @@
             
             return Vista::crear("question.index");
         }
-    
-
+        
         public function addQ(){
             $Q = new QuestionModel();
             $sendpregunta = $_POST['preguntas'];
@@ -28,7 +27,7 @@
             }
         
             if ($data['status'] == 1) {
-                Redirecciona::LetsGoTo('question/index');
+                Redirecciona::LetsGoTo('question.index');
                 echo $data['msg']; 
             } else {
                 echo $data['error'];
@@ -36,11 +35,9 @@
 
         }
 
-
         public function deleteQ($id) {
             $Q= new QuestionModel();
             $Q->deleteQuestion($id);
             Vista::crear("question.index");
         }
-
     }

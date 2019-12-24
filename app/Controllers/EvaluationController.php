@@ -4,19 +4,21 @@
     class EvaluationController {
      
         public function index() {
+           
             return Vista::crear("evaluation.index");
         }
 
         public function newEvaluation() {
-            $teacher = new TeacherModel();
-            $profesores = $teacher->allTeachers();
-            return Vista::crear("evaluation.create", array('teachers' => $profesores['teachers']));
+            $programa = new ProgramModel();
+            $programas = $programa->allProgram();
+            return Vista::crear("evaluation.create", array('programa' => $programas['programs']));
         }
 //   
         public function addE(){
             $eval = new EvaluationModel();
             $eval->setNumber($_POST["number"]);
-            $eval->setTeacher($_POST["teacher"]);
+            $eval->setPrograma($_POST["program"]);
+            $eval->setUser($_SESSION['user_id']);
             $data = $eval->addEvaluation();
 
             if ($data['status'] == 1) {
@@ -27,10 +29,9 @@
             }
         }
 
-        public function updateE($id_eval) {
-            $modeleval = new EvaluationModel();
-            $eval = $modeleval->infoEvaluation($id_eval);
-            return Vista::crear("program.update",$eval['evaluations']);
+        public function evaluation() {
+        
+            return Vista::crear("evaluation.evaluation");
         }
 
         public function deleteE($id_eval) {
